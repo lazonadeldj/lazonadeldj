@@ -574,7 +574,7 @@ playBtn.addEventListener("click", () => {
     pauseIcon.style.display = "flex";
 
     // Actualizar Media Session al reproducir
-    const currentTitle = trackInfoElement.textContent.replace("🎶 ", "") || "Transmitiendo...";
+    const currentTitle = trackInfoElement.textContent.replace("🎶 ", "") || "ROLANDO BUENO DJ";
     updateMediaSession(currentTitle, "EN VIVO", document.querySelector(".disc img").src);
 
   } else {
@@ -707,7 +707,7 @@ function fetchArtworkFromiTunes(title) {
 
 
 
-function updateMediaSession(title = "Transmitiendo...", artist = "La Zona Del Dj", artworkUrl = "") {
+function updateMediaSession(title = "ROLANDO BUENO DJ", artist = "La Zona Del Dj", artworkUrl = "") {
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
       title: title,
@@ -792,7 +792,7 @@ function fetchMetadata() {
   fetch("https://free.miradio.pro/icy?url=https://stream.zeno.fm/sf5prozqc99uv")
     .then(res => res.json())
     .then(data => {
-      const title = data.songtitle || data.song || "Transmitiendo...";
+      const title = data.songtitle || data.song || "ROLANDO BUENO DJ";
       trackInfoElement.textContent = title;
       fetchArtworkFromAllSources(title);
     })
