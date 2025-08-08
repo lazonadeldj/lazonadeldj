@@ -575,7 +575,7 @@ playBtn.addEventListener("click", () => {
 
     // Actualizar Media Session al reproducir
     const currentTitle = trackInfoElement.textContent.replace("🎶 ", "") || "Transmitiendo...";
-    updateMediaSession(currentTitle, "Radio Caliente", document.querySelector(".disc img").src);
+    updateMediaSession(currentTitle, "EN VIVO", document.querySelector(".disc img").src);
 
   } else {
     player.pause();
@@ -696,12 +696,12 @@ function fetchArtworkFromiTunes(title) {
       if (dynamicBg) dynamicBg.style.backgroundImage = `url('${artworkUrl}')`;
 
       }
-      updateMediaSession(title, "Radio Caliente", artworkUrl);
+      updateMediaSession(title, "La Zona Del Dj", artworkUrl);
     })
     .catch(() => {
       const fallbackImage = "https://i.ibb.co/0ySxmdZw/logodiscogira.png";
       document.querySelector(".disc img").src = fallbackImage;
-      updateMediaSession(title, "Radio Caliente", fallbackImage);
+      updateMediaSession(title, "RLa Zona Del Dj", fallbackImage);
     });
 }
 
