@@ -117,7 +117,7 @@
     justify-content: center;
     align-items: center;
     animation: spin 6s linear infinite;
-    border: 8px solid #FFD700;
+    border: 8px solid hsl(68, 100%, 50%);
     background: none;
 }
 .disc img {
@@ -136,8 +136,8 @@
   .play-btn {
     margin-left: -47px;
     margin-top: -45px;
-    background: red;
-    border: 8px solid #FFD700;
+    background: rgba(0, 255, 0, 0.818);
+    border: 8px solid #4dff00;
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -519,7 +519,7 @@ audio {
 <div class="bar"></div>
 <div class="bar"></div>
 </div>
-<h2 style="color: white;">Radio Caliente</h2>
+<h2 style="color: white;">La Zona Del Dj</h2>
 <p id="track-info" style="color: white; font-size: 0.9rem;">Cargando canción...</p>
 </div>
 <div class="player-fixed">
@@ -575,7 +575,7 @@ playBtn.addEventListener("click", () => {
 
     // Actualizar Media Session al reproducir
     const currentTitle = trackInfoElement.textContent.replace("🎶 ", "") || "Transmitiendo...";
-    updateMediaSession(currentTitle, "Radio Caliente", document.querySelector(".disc img").src);
+    updateMediaSession(currentTitle, "La Zona Del Dj", document.querySelector(".disc img").src);
 
   } else {
     player.pause();
@@ -696,12 +696,11 @@ function fetchArtworkFromiTunes(title) {
       if (dynamicBg) dynamicBg.style.backgroundImage = `url('${artworkUrl}')`;
 
       }
-      updateMediaSession(title, "Radio Caliente", artworkUrl);
+      updateMediaSession(title, "La Zona Del Dj", artworkUrl);
     })
     .catch(() => {
-      const fallbackImage = "https://i.ibb.co/0ySxmdZw/logodiscogira.png";
-      document.querySelector(".disc img").src = fallbackImage;
-      updateMediaSession(title, "Radio Caliente", fallbackImage);
+      const fallbackImage = "https://i.ibb.co/0ySxmdZw/logodiscogira.png";play
+      updateMediaSession(title, "La Zona Del Dj", fallbackImage);
     });
 }
 
@@ -789,7 +788,7 @@ function fetchArtworkFromAllSources(title) {
 }
 
 function fetchMetadata() {
-  fetch("https://free.miradio.pro/icy?url=https://stream.zeno.fm/sf5prozqc99uv")
+  fetch("https://free.miradio.pro/icy?url=https://stream.zeno.fm/s0xcmkiok6zuv")
     .then(res => res.json())
     .then(data => {
       const title = data.songtitle || data.song || "Transmitiendo...";
